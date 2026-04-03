@@ -64,14 +64,6 @@
 
 ---
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Rafi-Darussalam&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies" />
-</div>
-
----
-
 ## 📈 Activity Graph
 
 <div align="center">
@@ -85,8 +77,7 @@
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-Rafi--Darussalam-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Rafi-Darussalam)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rafi-darussalam)
-[![Email](https://img.shields.io/badge/Email-Say_Hello!-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your@email.com)
+[![Email](https://img.shields.io/badge/Email-Say_Hello!-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rafidarussalam80@gmail.com)
 
 </div>
 
