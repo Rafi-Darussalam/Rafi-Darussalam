@@ -54,11 +54,6 @@
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Rafi-Darussalam&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rafi-Darussalam&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0D1117" />
-</div>
-
-<div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Rafi-Darussalam&theme=tokyonight&hide_border=true&background=0D1117" alt="GitHub Streak" />
 </div>
 
