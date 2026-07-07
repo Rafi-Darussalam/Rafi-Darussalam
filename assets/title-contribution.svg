@@ -1,0 +1,18 @@
+<svg width="500" height="40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4" />
+      <stop offset="100%" style="stop-color:#3b82f6" />
+    </linearGradient>
+  </defs>
+  <style>
+    @keyframes draw-line {
+      0% { stroke-dashoffset: 60; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .line-anim { animation: draw-line 1.5s ease-out forwards; stroke-dasharray: 60; }
+  </style>
+  <line class="line-anim" x1="0" y1="20" x2="18" y2="20" stroke="url(#title-grad)" stroke-width="2" stroke-linecap="round"/>
+  <text x="28" y="26" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#c9d1d9" letter-spacing="3">CONTRIBUTION GRAPH</text>
+  <line class="line-anim" x1="262" y1="20" x2="420" y2="20" stroke="url(#title-grad)" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+</svg>

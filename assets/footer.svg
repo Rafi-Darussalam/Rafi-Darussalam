@@ -1,0 +1,41 @@
+<svg width="1200" height="120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.4" />
+    </linearGradient>
+    <linearGradient id="wave-grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.15" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.15" />
+    </linearGradient>
+    <linearGradient id="bg-foot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:#0a0a0f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <style>
+    @keyframes wave-move {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-20px); }
+      100% { transform: translateX(0); }
+    }
+    @keyframes wave-move2 {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(15px); }
+      100% { transform: translateX(0); }
+    }
+    .wave1 { animation: wave-move 8s ease-in-out infinite; }
+    .wave2 { animation: wave-move2 10s ease-in-out infinite; }
+  </style>
+
+  <rect width="1200" height="120" fill="url(#bg-foot)"/>
+
+  <!-- Wave layers -->
+  <path class="wave2" d="M0,80 C150,50 350,90 500,65 C650,40 800,85 1000,55 C1100,45 1150,70 1200,60 L1200,120 L0,120 Z" fill="url(#wave-grad2)"/>
+  <path class="wave1" d="M0,90 C200,70 400,100 600,75 C800,50 1000,95 1200,70 L1200,120 L0,120 Z" fill="url(#wave-grad)"/>
+
+  <!-- Bottom accent line -->
+  <line x1="0" y1="119" x2="1200" y2="119" stroke="url(#wave-grad)" stroke-width="2"/>
+</svg>

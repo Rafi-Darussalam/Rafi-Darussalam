@@ -1,0 +1,197 @@
+<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Main gradient for background -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a1a;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Accent gradient (cyan-blue) -->
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow for orbs -->
+    <filter id="orb-glow">
+      <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+    </pattern>
+
+    <!-- Dot pattern -->
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.5" fill="#ffffff" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0); opacity: 0.15; }
+      50% { transform: translate(20px, -15px); opacity: 0.25; }
+    }
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0); opacity: 0.1; }
+      50% { transform: translate(-15px, 10px); opacity: 0.2; }
+    }
+    @keyframes float3 {
+      0%, 100% { transform: translate(0, 0); opacity: 0.12; }
+      50% { transform: translate(10px, 20px); opacity: 0.22; }
+    }
+    @keyframes pulse-line {
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 0.4; }
+    }
+    @keyframes dash-move {
+      to { stroke-dashoffset: -20; }
+    }
+    @keyframes scan-line {
+      0% { transform: translateY(-300px); }
+      100% { transform: translateY(300px); }
+    }
+    @keyframes fade-in-up {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes shimmer {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+    @keyframes particle1 {
+      0%, 100% { transform: translate(0,0); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      50% { transform: translate(30px, -40px); }
+    }
+    @keyframes particle2 {
+      0%, 100% { transform: translate(0,0); opacity: 0; }
+      10% { opacity: 0.4; }
+      90% { opacity: 0.4; }
+      50% { transform: translate(-20px, -30px); }
+    }
+    @keyframes particle3 {
+      0%, 100% { transform: translate(0,0); opacity: 0; }
+      10% { opacity: 0.5; }
+      90% { opacity: 0.5; }
+      50% { transform: translate(15px, 25px); }
+    }
+    .orb1 { animation: float1 8s ease-in-out infinite; }
+    .orb2 { animation: float2 10s ease-in-out infinite; }
+    .orb3 { animation: float3 12s ease-in-out infinite; }
+    .pulse { animation: pulse-line 3s ease-in-out infinite; }
+    .dash { animation: dash-move 2s linear infinite; }
+    .scan { animation: scan-line 6s linear infinite; }
+    .title { animation: fade-in-up 1s ease-out forwards; }
+    .subtitle { animation: fade-in-up 1s ease-out 0.3s forwards; opacity: 0; }
+    .cursor { animation: cursor-blink 1s step-end infinite; }
+    .accent-text { animation: shimmer 3s ease-in-out infinite; }
+    .p1 { animation: particle1 4s ease-in-out infinite; }
+    .p2 { animation: particle2 5s ease-in-out 1s infinite; }
+    .p3 { animation: particle3 6s ease-in-out 2s infinite; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#bg-grad)"/>
+  
+  <!-- Grid overlay -->
+  <rect width="1200" height="300" fill="url(#grid)"/>
+  <rect width="1200" height="300" fill="url(#dots)"/>
+
+  <!-- Ambient orbs -->
+  <circle class="orb1" cx="150" cy="80" r="100" fill="#06b6d4" opacity="0.08" filter="url(#orb-glow)"/>
+  <circle class="orb2" cx="900" cy="200" r="120" fill="#8b5cf6" opacity="0.06" filter="url(#orb-glow)"/>
+  <circle class="orb3" cx="600" cy="250" r="80" fill="#3b82f6" opacity="0.07" filter="url(#orb-glow)"/>
+
+  <!-- Scan line effect -->
+  <rect class="scan" x="0" y="0" width="1200" height="1" fill="url(#accent-grad)" opacity="0.08"/>
+
+  <!-- Decorative lines -->
+  <line class="pulse" x1="0" y1="60" x2="200" y2="60" stroke="#06b6d4" stroke-width="1" opacity="0.2"/>
+  <line class="pulse" x1="1000" y1="240" x2="1200" y2="240" stroke="#8b5cf6" stroke-width="1" opacity="0.2"/>
+  
+  <!-- Dashed accent lines -->
+  <line class="dash" x1="0" y1="290" x2="1200" y2="290" stroke="url(#accent-grad)" stroke-width="0.5" stroke-dasharray="5,15" opacity="0.3"/>
+  <line class="dash" x1="0" y1="10" x2="1200" y2="10" stroke="url(#accent-grad)" stroke-width="0.5" stroke-dasharray="5,15" opacity="0.3"/>
+
+  <!-- Corner decorations -->
+  <!-- Top-left -->
+  <path d="M 30 30 L 30 50" stroke="#06b6d4" stroke-width="1.5" opacity="0.4" fill="none"/>
+  <path d="M 30 30 L 50 30" stroke="#06b6d4" stroke-width="1.5" opacity="0.4" fill="none"/>
+  <!-- Top-right -->
+  <path d="M 1170 30 L 1170 50" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4" fill="none"/>
+  <path d="M 1170 30 L 1150 30" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4" fill="none"/>
+  <!-- Bottom-left -->
+  <path d="M 30 270 L 30 250" stroke="#06b6d4" stroke-width="1.5" opacity="0.4" fill="none"/>
+  <path d="M 30 270 L 50 270" stroke="#06b6d4" stroke-width="1.5" opacity="0.4" fill="none"/>
+  <!-- Bottom-right -->
+  <path d="M 1170 270 L 1170 250" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4" fill="none"/>
+  <path d="M 1170 270 L 1150 270" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4" fill="none"/>
+
+  <!-- Floating particles -->
+  <circle class="p1" cx="250" cy="120" r="2" fill="#06b6d4"/>
+  <circle class="p2" cx="950" cy="100" r="1.5" fill="#8b5cf6"/>
+  <circle class="p3" cx="700" cy="180" r="1.8" fill="#3b82f6"/>
+  <circle class="p1" cx="400" cy="220" r="1.2" fill="#06b6d4" style="animation-delay: 1.5s"/>
+  <circle class="p2" cx="800" cy="60" r="1" fill="#8b5cf6" style="animation-delay: 0.5s"/>
+  <circle class="p3" cx="100" cy="200" r="1.5" fill="#3b82f6" style="animation-delay: 3s"/>
+
+  <!-- Small decorative code brackets -->
+  <text x="80" y="100" font-family="monospace" font-size="14" fill="#06b6d4" opacity="0.15">&lt;/&gt;</text>
+  <text x="1080" y="200" font-family="monospace" font-size="14" fill="#8b5cf6" opacity="0.15">{ }</text>
+  <text x="180" y="230" font-family="monospace" font-size="11" fill="#3b82f6" opacity="0.1">fn()</text>
+  <text x="980" y="80" font-family="monospace" font-size="11" fill="#06b6d4" opacity="0.1">npm</text>
+
+  <!-- Main title -->
+  <text class="title" x="600" y="120" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="48" font-weight="700" fill="#ffffff" filter="url(#glow)" letter-spacing="2">
+    Rafi Darussalam
+  </text>
+
+  <!-- Accent line under title -->
+  <rect class="accent-text" x="420" y="138" width="360" height="2" rx="1" fill="url(#accent-grad)" opacity="0.7"/>
+
+  <!-- Subtitle with terminal style -->
+  <text class="subtitle" x="600" y="175" text-anchor="middle" font-family="'Consolas', 'Courier New', monospace" font-size="16" fill="#8b949e" letter-spacing="1">
+    Full Stack Web Developer
+  </text>
+
+  <!-- Terminal prompt line -->
+  <g class="subtitle" style="animation-delay: 0.6s">
+    <text x="430" y="210" font-family="'Consolas', 'Courier New', monospace" font-size="13" fill="#06b6d4" opacity="0.7">~</text>
+    <text x="445" y="210" font-family="'Consolas', 'Courier New', monospace" font-size="13" fill="#8b949e" opacity="0.5">$</text>
+    <text x="460" y="210" font-family="'Consolas', 'Courier New', monospace" font-size="13" fill="#c9d1d9" opacity="0.6">building clean &amp; modern web experiences</text>
+    <rect class="cursor" x="770" y="198" width="8" height="15" fill="#06b6d4" opacity="0.7"/>
+  </g>
+
+  <!-- Status indicators -->
+  <g class="subtitle" style="animation-delay: 0.9s">
+    <circle cx="490" cy="245" r="3" fill="#22c55e" opacity="0.8"/>
+    <text x="500" y="248" font-family="'Consolas', monospace" font-size="11" fill="#8b949e" opacity="0.5">Available for collaboration</text>
+  </g>
+
+  <!-- Bottom wave -->
+  <path d="M0,285 C200,270 400,295 600,280 C800,265 1000,290 1200,275 L1200,300 L0,300 Z" fill="#06b6d4" opacity="0.03"/>
+  <path d="M0,290 C300,275 600,298 900,282 C1050,275 1150,295 1200,288 L1200,300 L0,300 Z" fill="#8b5cf6" opacity="0.02"/>
+</svg>
